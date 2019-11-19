@@ -1,0 +1,68 @@
+"use strict"
+var app = app || {}
+app =(()=>{
+	let _, js, router_js
+	let init=x=>{
+		_ = $.ctx()
+		js = $.js()
+		router_js = js+'/cmm/router.js'
+	}
+	let run = x => {
+		alert('eunb')
+		$.getScript(x+'/resources/js/cmm/router.js',()=>{
+			$.extend(new Session(x))
+			alert('app.js '+$.ctx())
+			onCreate()
+		})
+	}
+	let onCreate=()=>{
+		setContentView()
+	}
+	let setContentView=()=>{
+		/*<style>
+		#tab {
+		  font-family: arial, sans-serif;
+		  border-collapse: collapse;
+		  width: 100%;
+		}
+
+		#tab td, th {
+		  border: 1px solid #dddddd;
+		  text-align: left;
+		  padding: 8px;
+		}
+
+		#tab tr:nth-child(even) {
+		  background-color: #dddddd;
+		}
+		</style>*/
+		$('<table id="tab"><tr></tr></table>')
+		.css({  width: '80%',
+            height: '800px',
+            border: '1px solid black',
+            margin: '0 auto'})
+		.appendTo('#wrapper')
+		$('<td/>', {id : "left"})
+		.css({  width: '20%',
+            height: '100%',
+            border: '1px solid black',
+            'vertical-align': 'top'})
+        .appendTo('tr')
+		$('<td/>', {id : "right"})
+		.css({width: '80%',
+            height: '100%',
+            border: '1px solid black'})
+		.appendTo('tr')
+		$.each(['NAVER','CGV','BUGS'],(i,j)=>{
+			$('<div/>')
+			.text(j)
+			.css({
+				width: '100%',
+	            height: '50px',
+	            border: '1px solid black'
+	         
+			}).appendTo('#left')
+		})
+	}
+	return{run}
+})()

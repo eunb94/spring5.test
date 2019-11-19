@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="test2"/>
+<aop-project name="wegoTeam"/>
+<aop-project name="test"/>
+<aop-project name="wego2"/>
+</aop-reference-model>

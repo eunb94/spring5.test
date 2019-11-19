@@ -1,0 +1,59 @@
+"use strict"
+
+var eng = eng || {} 
+eng = (()=>{
+	const WHEN_ERR = '호출하는 JS 파일을 찾지 못했습니다.'
+		let _, js, css, img
+		let init =()=>{
+			_ = $.ctx()
+			js = $.js()
+			css = $.css()
+			img = $.img()
+
+		}
+		let onCreate=()=>{
+			init()
+			alert('engjs'+_)
+			$('<a>영어사전</a>').appendTo('body')
+			.click(e=>{
+				e.preventDefault()
+				alert('engjs2'+_)
+				$.ajax({
+					url : _+'/engs/engCrawl' ,
+					type : 'GET',
+					success : d=>{      		
+							alert('eng js success ' + d)
+							eng()
+					},
+					error : e=>{
+						alert('실패')
+					}
+				})
+/*				$.getJSON(_+'/engs/engCrawl'), d=>{
+				$.each(d,(i,j)=>{
+						alert('eng js success ' + d)
+					
+					})
+				}*/
+			})
+		}
+		
+		let eng =()=>{
+			$('</br></br></br></br></br><h2>Web Crawling</h2></br></br></br></br></br></br></br>'+	
+					'<form id="crawl_form">'+
+					'  <select name="site" size="1">'+
+			/*		'    <option value="volvo">Volvo</option>'+
+					'    <option value="saab">Saab</option>'+
+					'    <option value="fiat">Fiat</option>'+
+					'    <option value="audi">Audi</option>'+*	/
+					'  </select>'+
+					'  <br><br>'+
+					'  <input class="form-control mr-sm-2" type="text" placeholder="insert URL for crawling" aria-label="Search">'+
+					/*' <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>'+*/
+					'</form>'+
+					'<p>Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>')	
+					.appendTo('d.body')
+		}
+			return {onCreate}
+		
+})()

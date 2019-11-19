@@ -1,0 +1,8 @@
+package com.test2.web.pxy;
+
+import org.springframework.stereotype.Component;
+
+@Component("pxy")
+public class Proxy {
+
+}

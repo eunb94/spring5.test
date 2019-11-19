@@ -1,0 +1,36 @@
+package com.wego.web.test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+public class Crawler {
+public static void main(String[] args) {
+	
+	try {
+		// "https://music.bugs.co.kr/recomreview?&order=listorder&page=2"
+		Document rawData = Jsoup.connect("https://endic.naver.com/?sLn=kr").timeout(10*1000).get();
+		  Elements eng = rawData.select("div[class=txt_origin]"); 
+		  Elements kor = rawData.select("div[class=txt_trans]");
+		  List<String> eng2 = new ArrayList<>();
+		  List<String> kor2 = new ArrayList<>();
+		  
+		  if(Element e : eng) {
+			  eng2.add(e.text()+"\n ***************** \n");
+		  }else
+		 if(Element e : kor) {
+			 kor2.add(e.text()+"\n --------------------\n");
+		 }
+		 System.out.println(eng2);
+		 System.out.println("+++++++++");
+		 System.out.println(kor2);
+	} catch (Exception e2) {
+		// TODO Auto-generated catch block
+		e2.printStackTrace();
+	}
+}
+}

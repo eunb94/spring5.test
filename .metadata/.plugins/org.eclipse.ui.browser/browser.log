@@ -1,0 +1,7 @@
+
+11월 18, 2019 13:49:21.75 NEW SESSION
+11월 18, 2019 13:49:21.75 [11236:6928:1118/134921.748:ERROR:socket_stream.cc(218)] Closing stream with result -2
+11월 18, 2019 13:49:26.87 [11236:6928:1118/134926.870:ERROR:socket_stream.cc(218)] Closing stream with result -2
+11월 18, 2019 14:40:08.59 [11236:6928:1118/144008.593:ERROR:connection_factory_impl.cc(417)] Failed to connect to MCS endpoint with error -106
+11월 18, 2019 14:40:08.79 [11236:8104:1118/144008.593:ERROR:gcm_channel_status_request.cc(145)] GCM channel request failed.
+11월 18, 2019 14:40:08.81 [11236:6928:1118/144008.593:ERROR:connection_factory_impl.cc(417)] Failed to connect to MCS endpoint with error -106

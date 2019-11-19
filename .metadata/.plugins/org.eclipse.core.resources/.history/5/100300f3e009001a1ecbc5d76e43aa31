@@ -1,0 +1,41 @@
+package com.test.web.crw;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@Transactional
+@Lazy
+@RequestMapping("/crawls")
+public class CrawlCtrl {
+
+
+	@GetMapping("/naver")
+	public ArrayList<String> naver() {
+		System.out.println("네이버 컨트롤러");
+		
+		return null;
+	}
+		@GetMapping("/cgv")
+		public ArrayList<String> cgv() {
+			System.out.println("네이버 컨트롤러");
+			
+			return null;
+			
+		}
+		@GetMapping("/bugs")
+		public ArrayList<String> bugs() {
+			System.out.println("네이버 컨트롤러");
+			
+			return null;
+			
+		}
+	}
+}

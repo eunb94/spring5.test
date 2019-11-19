@@ -1,0 +1,46 @@
+"use strict"
+
+var eng = eng || {} 
+eng = (()=>{
+	const WHEN_ERR = '호출하는 JS 파일을 찾지 못했습니다.'
+		let _, js, css, img, vue_js
+		let init =()=>{
+			_ = $.ctx()
+			js = $.js()
+			css = $.css()
+			img = $.img()
+			vue_js = js+'/engVue/vue.js'
+		}
+		let onCreate=()=>{
+			init()
+			alert('engjs'+_)
+			$('<a>영어사전</a>').appendTo('body')
+			.click(e=>{
+				e.preventDefault()
+				alert('engjs2'+_)
+				$.ajax({
+					url : _+'/engs/engCrawl' ,
+					type : 'GET',
+					success : d=>{
+						$.each(d, (i,j)=>{        		
+							alert('eng js success ' + d)
+							
+						}).appendTo('body')
+						
+						
+					},
+					error : e=>{
+						alert('실패')
+					}
+				})
+/*				$.getJSON(_+'/engs/engCrawl'), d=>{
+				$.each(d,(i,j)=>{
+						alert('eng js success ' + d)
+					
+					})
+				}*/
+			})
+		}
+			return {onCreate}
+		
+})()

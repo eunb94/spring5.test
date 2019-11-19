@@ -1,0 +1,14 @@
+"use strict"
+var app = app || {}
+app = (()=>{
+	let _, js
+	let init=()=>{
+		_ = $.ctx()
+		js = $.js()
+	}
+	let run=x=>{}
+
+	
+	let onCreate=()=>{}
+	return{run}
+})()

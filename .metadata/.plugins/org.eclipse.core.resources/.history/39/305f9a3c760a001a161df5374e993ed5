@@ -1,0 +1,21 @@
+package com.test.web.pxy;
+
+import java.util.ArrayList;
+
+public class Inventory<T> {
+	private ArrayList<T> list;
+	
+	public void add(T t) {
+		list = new ArrayList<>();
+		list.add(t);
+	}
+	public void clear() {
+		list.clear();
+	}
+	public T get(int i) {
+		return list.get(i);
+	}
+	public ArrayList<T> get(){
+		return list;
+	}
+}

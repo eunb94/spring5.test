@@ -1,0 +1,17 @@
+package com.test.web.pxy;
+
+import java.util.ArrayList;
+
+import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Component;
+@Component @Lazy 
+public class Inventory<T> {
+	private ArrayList<T> Inventory;
+	
+	public Inventory() {Inventory = new ArrayList<>();}
+	public void add(T t) {Inventory.add(t);}
+	public void clear() {Inventory.clear();}
+	public T get(int i) {return Inventory.get(i);}
+	public ArrayList<T> get(){return Inventory;}
+
+}

@@ -1,0 +1,26 @@
+package com.wego.web.eunb;
+
+import java.util.HashMap;
+
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@Transactional
+@RequestMapping("/engs")
+public class EngCtrl {
+
+	@GetMapping("/engCrawl/{site}/{srch}")
+	public void bringEng(@PathVariable String site,
+							@PathVariable String srch) {
+		HashMap<String, String> map = new HashMap<>();
+		map.clear();
+		map.put("site", site);
+		map.put("srch", srch);
+		
+		
+	}
+}

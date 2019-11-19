@@ -1,0 +1,7 @@
+package com.test.web.pxy;
+
+import java.util.HashMap;
+
+public class Json<> {
+	private HashMap<String, String> map;
+}

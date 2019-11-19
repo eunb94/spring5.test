@@ -1,0 +1,16 @@
+package com.test.web.pxy;
+
+import java.util.HashMap;
+
+import org.springframework.stereotype.Component;
+@Component
+public class Box<T> {
+	private HashMap<String, T> json;
+	public Box() {json = new HashMap<String, T>();}
+	public void put(Inventory<String> list, Inventory<T> y) {
+/*		json = new HashMap<>();
+		for(int i=0; i<; i++) {
+			
+		}*/
+	}
+}
